@@ -14,7 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/games")
 public class GameController {
-
     @Autowired
     private GameService gameService;
     @GetMapping
