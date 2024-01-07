@@ -34,13 +34,13 @@ public class Game {
     private String longDescription;
 
     public Game(GameDTO data){
-        this.title = data.getTitle();
-        this.year = data.getYear();
-        this.genre = data.getGenre();
-        this.platforms = data.getPlatforms();
-        this.score = data.getScore();
-        this.imgUrl = data.getImgUrl();
-        this.shortDescription = data.getShortDescription();
-        this.longDescription = data.getLongDescription();
+        title = data.getTitle();
+        year = data.getYear();
+        genre = data.getGenre();
+        platforms = data.getPlatforms();
+        score = data.getScore();
+        imgUrl = data.getImgUrl();
+        shortDescription = data.getShortDescription();
+        longDescription = data.getLongDescription();
     }
 }

@@ -1,5 +1,6 @@
 package com.devsuperior.dslist.entities;
 
+import com.devsuperior.dslist.dto.GameListDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,4 +17,8 @@ public class GameList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    public GameList(GameListDTO data) {
+        name = data.getName();
+    }
 }

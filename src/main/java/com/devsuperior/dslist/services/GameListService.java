@@ -5,6 +5,7 @@ import com.devsuperior.dslist.dto.GameMinDTO;
 import com.devsuperior.dslist.entities.GameList;
 import com.devsuperior.dslist.repositories.GameListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,5 +19,10 @@ public class GameListService {
     public List<GameListDTO> findAll(){
         List<GameList> result = gameListRepository.findAll();
         return result.stream().map(x -> new GameListDTO(x)).toList();
+    }
+    public ResponseEntity insertGameList(GameListDTO data){
+        GameList newGameList = new GameList(data);
+        gameListRepository.save(newGameList);
+        return ResponseEntity.ok().build();
     }
 }
