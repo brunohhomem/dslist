@@ -1,6 +1,7 @@
 package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.entities.Game;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 @NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
 public class GameDTO {
     private Long id;
     private String title;

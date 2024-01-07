@@ -1,5 +1,6 @@
 package com.devsuperior.dslist.entities;
 
+import com.devsuperior.dslist.dto.GameDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,4 +32,15 @@ public class Game {
 
     @Column(columnDefinition = "TEXT")
     private String longDescription;
+
+    public Game(GameDTO data){
+        this.title = data.getTitle();
+        this.year = data.getYear();
+        this.genre = data.getGenre();
+        this.platforms = data.getPlatforms();
+        this.score = data.getScore();
+        this.imgUrl = data.getImgUrl();
+        this.shortDescription = data.getShortDescription();
+        this.longDescription = data.getLongDescription();
+    }
 }
