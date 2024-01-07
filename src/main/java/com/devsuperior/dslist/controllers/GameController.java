@@ -2,7 +2,6 @@ package com.devsuperior.dslist.controllers;
 
 import com.devsuperior.dslist.dto.GameDTO;
 import com.devsuperior.dslist.dto.GameMinDTO;
-import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.services.GameService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +20,11 @@ public class GameController {
         return gameService.findAll();
     }
     @GetMapping("/{id}")
-    public GameDTO findById(@PathVariable Long id){
-        return gameService.findById(id);
-    }
+    public GameDTO findById(@PathVariable Long id){return gameService.findById(id);}
     @PostMapping
-    public ResponseEntity insertGame(@RequestBody @Valid GameDTO data){
-        return gameService.insertGame(data);
-    }
+    public ResponseEntity insertGame(@RequestBody @Valid GameDTO data){return gameService.insertGame(data);}
+    @PutMapping
+    public ResponseEntity updateGameById(@RequestBody @Valid GameDTO data){return gameService.updateGameById(data);}
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteGameById(@PathVariable Long id){return gameService.deleteGameById(id);}
 }
